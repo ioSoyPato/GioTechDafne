@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"], .login {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        input[type="submit"]:hover, .login:hover {
+            background-color: #004494;
+        }
+        .login-redirect {
+            margin-top: 20px;
+            display: block;
+            text-align: center; /* Asegura que el texto esté centrado */
+        }
+    </style>
+    <script>
+        function validatePasswords() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="/register" method="post" onsubmit="return validatePasswords()">
+        <h2>Registro</h2>
+        <input type="text" name="username" placeholder="Nombre o Correo Electrónico" required>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmar Contraseña" required>
+        <input type="submit" value="Registrarse">
+        <div class="login-redirect">
+            <a href="/login">Ir a Iniciar Sesión</a>
+        </div>
+    </form>
+</body>
+</html>

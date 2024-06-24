@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>INFORMACIÓN SOCIOECONÓMICA DEL SOLICITANTE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>INFORMACIÓN SOCIOECONÓMICA DEL SOLICITANTE</h1>
+    
+    <form action="/section1" enctype="multipart/form-data" method="post" class="section">
+        <p>1. Información del solicitante</p>
+        <input name="nombre" type="text" placeholder="Ingresa tu nombre">
+        <input name="apellidop" type="text" placeholder="Ingresa tu apellido paterno">
+        <input name="apellidom" type="text" placeholder="Ingresa tu apellido materno">
+    
+    
+
+        <p>Domicilio</p> 
+        <input name="calle" type="text" placeholder="Calle">
+        <input name="numero" type="text" placeholder="Número">
+        <input name="colonia" type="text" placeholder="Colonia">
+        <input name="poblacion" type="text" placeholder="Población">
+        <input name="municipio" type="text" placeholder="Municipio">
+        <input name="estado" type="text" placeholder="Estado">
+        <input name="codigo" type="text" placeholder="Código Postal">
+        <input name="telefonocasa" type="text" placeholder="Teléfono casa">
+        <input name="celular1" type="text" placeholder="Celular">
+        <input name="email1" type="text" placeholder="Correo electrónico">
+        <input type="submit" value="Subir">
+
+    </form>
+
+    <form action="/section2_4" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>2. Cuenta con apoyo o beca diferente al solicitado:</p>
+            <input type="radio" id="si" name="tiene_beca" value="si" >
+            <label for="si">Sí</label>
+            <input type="radio" id="no" name="tiene_beca" value="no" >
+            <label for="no">No</label>
+            <input name="tipobeca" type="text" placeholder="Tipo de beca">
+            <input name="economica" type="text" placeholder="En caso de ser económica, indique la cantidad que recibe:">
+            <input name="institucion" type="text" placeholder="Institución que la otorga">
+        </div>
+    
+        <div class="section">
+            <p>3. Depende económicamente de:</p>
+            <input type="radio" id="Padres3" name="dependencia" value="Padres" >
+            <label for="Padres3">Padres</label>
+            <input type="radio" id="Tutores3" name="dependencia" value="Tutores" >
+            <label for="Tutores3">Tutores</label>
+            <input type="radio" id="Solo3" name="dependencia" value="Solo" >
+            <label for="Solo3">Solo</label>
+            <input name="tutores3" type="text" placeholder="En caso de tutores, especifique el parentesco">
+        </div>
+        
+        <div class="section">
+            <p>4. Vive con:</p>
+            <input type="radio" id="Padres4" name="vive_con" value="Padres" >
+            <label for="Padres4">Padres</label>
+            <input type="radio" id="Tutores4" name="vive_con" value="Tutores" >
+            <label for="Tutores4">Tutores</label>
+            <input type="radio" id="Solo4" name="vive_con" value="Solo" >
+            <label for="Solo4">Solo</label>
+            <input type="radio" id="Cónyuge4" name="vive_con" value="Cónyuge" >
+            <label for="Cónyuge4">Cónyuge</label>
+            <input type="radio" id="Otro4" name="vive_con" value="Otro" >
+            <label for="Otro4">Otro</label>
+            <input name="otroparentesco" type="text" placeholder="En caso de otro, especifique el parentesco">
+        </div>
+    
+        <input type="submit" value="Subir">
+    </form>
+    
+
+    <form action="/section5_7" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>5. Trabaja actualmente:</p>
+            <input type="radio" id="si_trabaja" name="trabaja_actualmente" value="si" >
+            <label for="si_trabaja">Sí</label>
+            <input type="radio" id="no_trabaja" name="trabaja_actualmente" value="no" >
+            <label for="no_trabaja">No</label>
+        </div>
+    
+        <div class="section">
+            <p>6. Lugar de trabajo del solicitante</p>
+            <input name="nombreempresa" type="text" placeholder="Nombre de la empresa">
+            <input name="puesto" type="text" placeholder="Cargo o puesto que desempeña">
+            <input name="tiempolaborando" type="text" placeholder="Tiempo laborando">
+            <input name="domicilio6" type="text" placeholder="Domicilio">
+            <input name="telefono6" type="text" placeholder="Teléfono">
+        </div>
+    
+        <div class="section">
+            <p>7. ¿Viven sus padres?</p>
+            <input type="radio" id="Ambos7" name="viven_padres" value="Ambos" >
+            <label for="Ambos7">Ambos</label>
+            <input type="radio" id="solopadre" name="viven_padres" value="Solo el padre" >
+            <label for="solopadre">Solo el padre</label>
+            <input type="radio" id="solomadre" name="viven_padres" value="Solo la madre" >
+            <label for="solomadre">Solo la madre</label>
+            <input type="radio" id="ninguno" name="viven_padres" value="Ninguno" >
+            <label for="ninguno">Ninguno</label>
+            <input name="edadpadre" type="text" placeholder="Edad del padre">
+            <input name="edadmadre" type="text" placeholder="Edad de la madre">
+        </div>
+        <input type="submit" value="Subir">
+    </form>
+    
+
+    <form action="/section8_10" enctype="multipart/form-data" method="post" class="section">
+
+        <div class="section">
+            <p>8. Estado civil de los padres</p>
+            <p>¿Viven juntos?</p>
+            <div>
+                <input type="radio" id="si_viven_juntos" name="viven_juntos" value="si" >
+                <label for="si_viven_juntos">Sí</label>
+                <input type="radio" id="no_viven_juntos" name="viven_juntos" value="no" >
+                <label for="no_viven_juntos">No</label>
+            </div>
+        
+            <p>Padre</p>
+            <input type="radio" id="casado_padre" name="estado_civil_padre" value="Casado" >
+            <label for="casado_padre">Casado</label>
+            <input type="radio" id="union_libre_padre" name="estado_civil_padre" value="Unionlibre" >
+            <label for="union_libre_padre">Unión libre</label>
+            <input type="radio" id="viudo_padre" name="estado_civil_padre" value="Viudo" >
+            <label for="viudo_padre">Viudo</label>
+            <input type="radio" id="divorciado_padre" name="estado_civil_padre" value="Divorciado" >
+            <label for="divorciado_padre">Divorciado</label>
+        
+            <p>Madre</p>
+            <input type="radio" id="casada_madre" name="estado_civil_madre" value="Casada" >
+            <label for="casada_madre">Casada</label>
+            <input type="radio" id="union_libre_madre" name="estado_civil_madre" value="Unionlibre" >
+            <label for="union_libre_madre">Unión libre</label>
+            <input type="radio" id="viuda_madre" name="estado_civil_madre" value="Viuda" >
+            <label for="viuda_madre">Viuda</label>
+            <input type="radio" id="divorciada_madre" name="estado_civil_madre" value="Divorciada" >
+            <label for="divorciada_madre">Divorciada</label>
+        </div>
+        
+
+        <div class="section">
+            <p>9. Indique la escolaridad máxima de sus padres (aún cuando estén finados):</p>
+            <input name="padre_educacion" type="text" placeholder="Padre">
+            <input name="madre_educacion" type="text" placeholder="Madre">
+        </div>
+
+        <div class="section">
+            <p>10. Cuál es la principal ocupación remunerada que tienen sus padres o tutores actualmente</p>
+            <p>PADRE</p>
+            <input name="padre_nombre" type="text" placeholder="Nombre completo">
+            <input name="padre_lugar_trabajo" type="text" placeholder="Lugar de trabajo">
+            <input name="padre_cargo" type="text" placeholder="Cargo o puesto que desempeña">
+            <input name="padre_tiempo_laborando" type="text" placeholder="Tiempo laborando">
+            <input name="padre_domicilio" type="text" placeholder="Domicilio">
+            <input name="padre_telefono" type="text" placeholder="Teléfono">
+
+            <p>MADRE</p>
+            <input name="madre_nombre" type="text" placeholder="Nombre completo">
+            <input name="madre_lugar_trabajo" type="text" placeholder="Lugar de trabajo">
+            <input name="madre_cargo" type="text" placeholder="Cargo o puesto que desempeña">
+            <input name="madre_tiempo_laborando" type="text" placeholder="Tiempo laborando">
+            <input name="madre_domicilio" type="text" placeholder="Domicilio">
+            <input name="madre_telefono" type="text" placeholder="Teléfono">
+            <input type="submit" value="Subir">
+        </div>
+    </form>
+
+    <form action="/section11_13" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>11. Hermanos</p>
+            <input name="cuantoshermanos" type="text" placeholder="¿Cuántos hermanos tiene?">
+            <p>¿Viven en el domicilio que habita?</p>
+            <input type="radio" id="si_hermanos" name="hermanos_viven" value="si" >
+            <label for="si_hermanos">Sí</label>
+            <input type="radio" id="no_hermanos" name="hermanos_viven" value="no" >
+            <label for="no_hermanos">No</label>
+            <input name="cuantosviven" type="text" placeholder="¿Cuántos viven en el domicilio que habita?">
+        </div>
+    
+        <div class="section">
+            <p>12. Dependencia económica</p>
+            <input name="economica12" type="text" placeholder="¿Cuántas personas dependen económicamente de quien(es) sostienen la familia? (incluyéndote):">
+        </div>
+    
+        <div class="section">
+            <p>13. Vivienda</p>
+            <input name="vivienda" type="text" placeholder="¿Cuántas personas habitan la casa en la que vives? (incluyéndote):">
+            <p>Para cada una agrega (Nombre, Edad, Parentesco, Ocupación, Estudio máximo)</p>
+            <input name="nombre13" type="text" placeholder="Nombre">
+            <input name="edad13" type="text" placeholder="Edad">
+            <input name="parentesco13" type="text" placeholder="Parentesco">
+            <input name="ocupacion13" type="text" placeholder="Ocupación">
+            <input name="estudio13" type="text" placeholder="Estudio máximo">
+            <input type="submit" value="Subir">
+        </div>
+    </form>
+    
+
+    <form action="/section14_16" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>14. En caso de que algún integrante de la familia esté estudiando, indique en qué institución </p>
+            <p>Para cada una agrega (Nombre, Nivel de estudios, Institución)</p>
+            <input name="nombre14" type="text" placeholder="Nombre">
+            <input name="nivel14" type="text" placeholder="Nivel de estudios">
+            <input name="institucion14" type="text" placeholder="Institución">
+        </div>
+    
+        <div class="section">
+            <p>15. A qué régimen de seguridad social se encuentra incorporado(a)</p>
+            <input type="radio" id="imss" name="regimen_seguridad_social" value="imss" >
+            <label for="imss">IMSS</label>
+            <input type="radio" id="ISSSTE" name="regimen_seguridad_social" value="ISSSTE" >
+            <label for="ISSSTE">ISSSTE</label>
+            <input type="radio" id="Asistencia" name="regimen_seguridad_social" value="Asistencia" >
+            <label for="Asistencia">Asistencia pública</label>
+            <input type="radio" id="Particular" name="regimen_seguridad_social" value="Particular" >
+            <label for="Particular">Particular</label>
+            <input type="radio" id="Otro15" name="regimen_seguridad_social" value="Otro" >
+            <label for="Otro15">Otro</label>
+            <input name="otro_regimen_seguridad" type="text" placeholder="Especificar otro">
+        </div>
+    
+        <div class="section">
+            <p>16. Ingresos familiares</p>
+            <input name="cuantastrabajan" type="text" placeholder="De las personas que viven en tu casa, ¿cuántas trabajan o realizan alguna actividad por el cual ganen dinero?">
+            <input name="cuantasaportan" type="text" placeholder="De esas personas que trabajan ¿cuántas aportan al gasto familiar?">
+            <input name="ingresomensual" type="text" placeholder="¿Cuál es el ingreso mensual de su familia? (no considere impuestos), de caso de no tener ingresos, responder 0">
+            <input name="ingresopropio" type="text" placeholder="Ingreso Propio">
+            <input name="ingresoconyuge" type="text" placeholder="Ingreso del cónyuge">
+            <input name="ingresopadre" type="text" placeholder="Ingreso del padre o tutor">
+            <input name="ingresomadre" type="text" placeholder="Ingreso de la madre">
+            <input name="ingresohermanos" type="text" placeholder="Ingreso de los hermanos">
+            <input name="otrosingresos" type="text" placeholder="Otros ingresos">
+            <input type="submit" value="Subir">
+        </div>
+    </form>
+    
+
+    <form action="/section17" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>17. Gastos mensuales</p>
+            <p>¿Cuánto es el gasto mensual de tu familia en los siguientes conceptos?</p>
+            <input name="alimentos" type="text" placeholder="Alimentos">
+            <input name="renta" type="text" placeholder="Renta y/o predial">
+            <input name="despensa" type="text" placeholder="Despensa">
+            <input name="luz" type="text" placeholder="Luz">
+            <input name="agua" type="text" placeholder="Agua">
+            <input name="telefono17" type="text" placeholder="Teléfono">
+            <input name="transporte17" type="text" placeholder="Transporte">
+            <input name="celular17" type="text" placeholder="Celular">
+            <input name="cable" type="text" placeholder="Cable">
+            <input name="internet17" type="text" placeholder="Internet">
+            <input name="gas17" type="text" placeholder="Gas">
+            <input name="productoslimpieza" type="text" placeholder="Productos de limpieza">
+            <input name="creditoautomovil" type="text" placeholder="Pago crédito automóvil">
+            <input name="tarjetascredito" type="text" placeholder="Tarjetas de crédito">
+            <input name="hipoteca" type="text" placeholder="Pago de hipoteca">
+            <input name="serviciosdomésticos" type="text" placeholder="Servicios domésticos">
+            <input name="ropa" type="text" placeholder="Ropa y calzado">
+            <input name="gastosmedicos" type="text" placeholder="Gastos médicos">
+            <input name="gastospersonales" type="text" placeholder="Gastos personales">
+            <input name="diversiones" type="text" placeholder="Diversiones y entretenimiento">
+            <input name="vacaciones" type="text" placeholder="Vacaciones">
+            <input name="colegiatura" type="text" placeholder="Colegiatura">
+            <input name="colegiaturafamilia" type="text" placeholder="Colegiatura otros miembros familia">
+            <input name="libros" type="text" placeholder="Libros y materiales">
+            <input name="seguros" type="text" placeholder="Seguros (vida, auto, casa, médico)">
+            <input name="otros17" type="text" placeholder="Otros gastos">
+            <input type="submit" value="Subir">
+
+        </div>
+    </form>
+
+    <form action="/section18_20" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>18. Si es foráneo, indique la cantidad mensual que paga por los siguientes conceptos:</p>
+            <input name="colegiatura18" type="text" placeholder="Colegiatura">
+            <input name="ropa18" type="text" placeholder="Ropa">
+            <input name="vivienda18" type="text" placeholder="Vivienda">
+            <input name="libros18" type="text" placeholder="Libros">
+            <input name="lavanderia18" type="text" placeholder="Lavandería">
+            <input name="transporte18" type="text" placeholder="Transporte local">
+            <input name="gastospersonales18" type="text" placeholder="Gastos personales">
+            <input name="transporteforaneo18" type="text" placeholder="Transporte foráneo">
+            <input name="alimentos18" type="text" placeholder="Comida">
+        </div>
+    
+        <div class="section">
+            <p>19. De acuerdo a sus ingresos ¿en qué clase socioeconómica se ubicaría?</p>
+            <input type="radio" id="alta" name="clase_socioeconomica" value="alta" >
+            <label for="alta">Alta</label>
+            <input type="radio" id="mediaalta" name="clase_socioeconomica" value="mediaalta" >
+            <label for="mediaalta">Media alta</label>
+            <input type="radio" id="media" name="clase_socioeconomica" value="media" >
+            <label for="media">Media</label>
+            <input type="radio" id="mediabaja" name="clase_socioeconomica" value="mediabaja" >
+            <label for="mediabaja">Media Baja</label>
+            <input type="radio" id="baja" name="clase_socioeconomica" value="baja" >
+            <label for="baja">Baja</label>
+        </div>
+    
+        <div class="section">
+            <p>20. La casa donde vives es</p>
+            <input type="radio" id="propia" name="tipo_vivienda" value="propia" >
+            <label for="propia">Propia</label>
+            <input type="radio" id="pagando" name="tipo_vivienda" value="pagando" >
+            <label for="pagando">Se está pagando</label>
+            <input type="radio" id="rentada" name="tipo_vivienda" value="rentada" >
+            <label for="rentada">Rentada</label>
+        </div>
+        <input type="submit" value="Subir">
+    </form>
+    
+
+    <form action="/section21" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>21. Señale con cuántos de los siguientes bienes y aparatos cuenta en su casa:</p>
+            <input type="checkbox" id="sala" name="items" value="sala" >
+            <label for="sala">Sala</label>
+            <input type="checkbox" id="computadora" name="items" value="computadora" >
+            <label for="computadora">Computadora</label>
+            <input type="checkbox" id="secadora" name="items" value="secadora" >
+            <label for="secadora">Secadora</label>
+            <input type="checkbox" id="estereo" name="items" value="estereo" >
+            <label for="estereo">Estéreo</label>
+            <input type="checkbox" id="microondas" name="items" value="microondas" >
+            <label for="microondas">Microondas</label>
+            <input type="checkbox" id="internet" name="items" value="internet" >
+            <label for="internet">Internet</label>
+            <input type="checkbox" id="lavadora" name="items" value="lavadora" >
+            <label for="lavadora">Lavadora</label>
+            <input type="checkbox" id="cochera" name="items" value="cochera" >
+            <label for="cochera">Cochera</label>
+            <input type="checkbox" id="refrigerador" name="items" value="refrigerador" >
+            <label for="refrigerador">Refrigerador</label>
+            <input type="checkbox" id="fax" name="items" value="fax" >
+            <label for="fax">Fax</label>
+            <input type="checkbox" id="ventilador" name="items" value="ventilador" >
+            <label for="ventilador">Ventilador</label>
+            <input type="checkbox" id="impresora" name="items" value="impresora" >
+            <label for="impresora">Impresora</label>
+            <input type="checkbox" id="baños" name="items" value="baños" >
+            <label for="baños">Baños</label>
+            <input type="checkbox" id="jardin" name="items" value="jardin" >
+            <label for="jardin">Jardín</label>
+            <input type="checkbox" id="comedor" name="items" value="comedor" >
+            <label for="comedor">Comedor</label>
+            <input type="checkbox" id="camas" name="items" value="camas" >
+            <label for="camas">Camas</label>
+            <input type="checkbox" id="telefono21" name="items" value="telefono21" >
+            <label for="telefono21">Teléfono</label>
+            <input type="checkbox" id="celular21" name="items" value="celular21" >
+            <label for="celular21">Celular</label>
+            <input type="checkbox" id="cable21" name="items" value="cable21" >
+            <label for="cable21">Cable</label>
+            <input type="checkbox" id="tv" name="items" value="tv" >
+            <label for="tv">TV</label>
+            <input type="checkbox" id="patio" name="items" value="patio" >
+            <label for="patio">Patio</label>
+            <input type="checkbox" id="dvd" name="items" value="dvd" >
+            <label for="dvd">DVD</label>
+            <input type="submit" value="Subir">
+        </div>
+    </form>
+    
+
+    <form action="/section22" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>22. Señale los vehículos que poseen en casa </p>
+            <p>Para cada una agrega (Marca, Modelo, Valor comercial actual, Cantidad que se adeuda en pesos, Plazo en meses, Pago mensual)</p>
+            <input name="marca" type="text" placeholder="Marca">
+            <input name="modelo" type="text" placeholder="Modelo">
+            <input name="valor_comercial" type="text" placeholder="Valor comercial actual">
+            <input name="cantidad_adeuda" type="text" placeholder="Cantidad que se adeuda en pesos">
+            <input name="plazo" type="text" placeholder="Plazo en meses">
+            <input name="pago_mensual" type="text" placeholder="Pago mensual">
+            <input type="submit" value="Subir">
+
+        </div>
+    </form>
+
+    <form action="/section23_25" enctype="multipart/form-data" method="post" class="section">
+        <div class="section">
+            <p>23. La zona en que vive es:</p>
+            <input type="radio" id="rural" name="zona_vivienda" value="rural" >
+            <label for="rural">Rural</label>
+            <input type="radio" id="urbana" name="zona_vivienda" value="urbana" >
+            <label for="urbana">Urbana</label>
+            <input type="radio" id="urbanomarginada" name="zona_vivienda" value="urbanomarginada" >
+            <label for="urbanomarginada">Urbano marginada</label>
+            <input type="radio" id="indigena" name="zona_vivienda" value="indigena" >
+            <label for="indigena">Indígena</label>
+        </div>
+    
+        <div class="section">
+            <p>24. Pertenece a una comunidad indígena:</p>
+            <input type="radio" id="si24" name="comunidad_indigena" value="si" >
+            <label for="si24">Sí</label>
+            <input type="radio" id="no24" name="comunidad_indigena" value="no" >
+            <label for="no24">No</label>
+            <input name="especifique_comunidad" type="text" placeholder="Especifique cual">
+        </div>
+    
+        <div class="section">
+            <p>25. Sufre de alguna discapacidad:</p>
+            <input type="radio" id="si25" name="discapacidad" value="si" >
+            <label for="si25">Sí</label>
+            <input type="radio" id="no25" name="discapacidad" value="no" >
+            <label for="no25">No</label>
+            <input name="especifique_discapacidad" type="text" placeholder="Especifique cual">
+            <input type="submit" value="Subir">
+        </div>
+    </form>
+    
+</body>
+</html>
+
