@@ -63,6 +63,7 @@ async def register(
 df = pd.read_csv("data.csv",index_col=0)
 credencials = pd.read_csv("credencials.csv")
 Global_user = credencials["username"][0]
+sandia = "sandia"
 
 # Formulario 
 @app.post("/section1")
