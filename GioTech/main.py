@@ -21,13 +21,16 @@ async def greet(request: Request):
 async def greet(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
+
 @app.post("/login")
 async def login(request: Request, username: str = Form(...), password: str = Form(...)):
     try:
         with open("data.csv", mode='r') as file:
             reader = csv.reader(file)
             for row in reader:
-                if row[0] == username and row[1] == password:
+                if row[1] == username and row[2] == password:
+                    credencials = pd.DataFrame({"username":[username], "password":[password]})
+                    credencials.to_csv("credencials.csv")                   
                     return templates.TemplateResponse("index2.html", {"request": request})
             return templates.TemplateResponse("login.html", {"request": request, "error": "Credenciales incorrectas"})
     except FileNotFoundError:
@@ -57,46 +60,14 @@ async def register(
 
 # guardar respuestas
 
-@app.get("/formulario")
-async def mostrar_formulario(request: Request, correo: str):
-    usuario_datos = cargar_datos_usuario(correo)
-    return templates.TemplateResponse("index2.html", {"request": request, "data": usuario_datos})
-
-def cargar_datos_usuario(correo):
-    df = pd.read_csv('data.csv')
-    datos_usuario = df[df['correo'] == correo].iloc[0].to_dict()
-    return datos_usuario
-
-@app.post("/submit_form")
-async def submit_form(correo: str = Form(...), nombre: str = Form(...), apellido_paterno: str = Form(...), apellido_materno: str = Form(...), 
-):
-    data_path = 'data.csv'
-    try:
-        df = pd.read_csv(data_path)
-    except FileNotFoundError:
-        df = pd.DataFrame(columns=['correo', 'nombre', 'apellido_paterno', 'apellido_materno'])
-    
-    if correo in df['correo'].values:
-        df.loc[df['correo'] == correo, ['nombre', 'apellido_paterno', 'apellido_materno']] = [nombre, apellido_paterno, apellido_materno]
-    else:
-        new_data = pd.DataFrame({
-            'correo': [correo],
-            'nombre': [nombre],
-            'apellido_paterno': [apellido_paterno],
-            'apellido_materno': [apellido_materno]
-        })
-        df = pd.concat([df, new_data], ignore_index=True)
-    df.to_csv(data_path, index=False)
-
-    return {"message": "Datos guardados exitosamente"}
-
-
-
+df = pd.read_csv("data.csv",index_col=0)
+credencials = pd.read_csv("credencials.csv")
+Global_user = credencials["username"][0]
 
 # Formulario 
-
 @app.post("/section1")
 async def sec1(request: Request, nombre: str = Form(...), apellidop: str = Form(...),apellidom:str  = Form(...), calle:str = Form(...), numero:str = Form(...), colonia:str = Form(...), poblacion:str = Form(...), municipio:str = Form(...), estado:str = Form(...), codigo:int = Form(...), telefonocasa:int = Form(...), celular1:int = Form(...), email1:str = Form(...)):
+    global Global_user
     print(nombre)
     print(apellidop)
     print(apellidom)
@@ -110,6 +81,9 @@ async def sec1(request: Request, nombre: str = Form(...), apellidop: str = Form(
     print(telefonocasa)
     print(celular1)
     print(email1)
+
+    df.loc[df["correo"] == Global_user, "pregunta1"] = "True"
+    df.to_csv("data.csv")
     return "si funcionó"
 
 
